@@ -1,70 +1,170 @@
-# Getting Started with Create React App
+# 🏟️ TurfFinder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Find and explore sports turfs near you — football, cricket, basketball and more.
 
-## Available Scripts
+**Live Demo → [turf-finder-jade.vercel.app](https://turf-finder-jade.vercel.app)**
 
-In the project directory, you can run:
+![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-3-38BDF8?style=flat&logo=tailwindcss)
+![Google Maps](https://img.shields.io/badge/Google%20Maps-API-4285F4?style=flat&logo=googlemaps)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?style=flat&logo=vercel)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📸 Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+TurfFinder is a React web application that helps users discover and explore sports turfs in their city. Inspired by Airbnb and Zomato's map-based search experience, it features a two-column layout with a scrollable turf list on the left and an interactive Google Map on the right.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✨ Features
 
-### `npm run build`
+- 🔍 **Live Search** — filter turfs by name, location, or sport in real time
+- 🗺️ **Google Maps Integration** — interactive map with turf markers
+- 📍 **Current Location** — auto-centers map to your location with a blue dot
+- 🎯 **Smart Filters** — filter by sport, price range, and availability
+- 🔄 **Bi-directional Highlighting** — clicking a card highlights its map pin and vice versa
+- 🔐 **Authentication** — Login and Signup with Player / Owner role selection
+- 🏠 **Owner Dashboard** — dedicated dashboard for turf owners (listing feature coming soon)
+- 📱 **Responsive Layout** — works across screen sizes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🖥️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Technology | Purpose |
+|---|---|
+| ReactJS 18 | UI framework |
+| React Router v6 | Client-side routing |
+| Tailwind CSS v3 | Utility-first styling |
+| @react-google-maps/api | Google Maps + markers |
+| React Context API | Auth state management |
+| Vercel | Deployment |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📁 Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+turf-finder/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Navbar.js
+│   │   ├── SearchBar.js
+│   │   ├── Sidebar.js
+│   │   ├── TurfCard.js
+│   │   ├── TurfList.js
+│   │   ├── MapContainer.js
+│   │   └── ProtectedRoute.js
+│   ├── context/
+│   │   └── AuthContext.js
+│   ├── data/
+│   │   └── turfs.js
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── Login.js
+│   │   ├── Signup.js
+│   │   └── OwnerDashboard.js
+│   ├── services/
+│   │   └── turfService.js
+│   ├── App.js
+│   ├── index.js
+│   └── index.css
+├── .env.example
+└── package.json
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🚀 Getting Started
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Node.js v16+
+- A Google Maps API key with **Maps JavaScript API** enabled
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation
 
-### Code Splitting
+```bash
+# 1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/turf-finder.git
+cd turf-finder
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# 2. Install dependencies
+npm install
 
-### Analyzing the Bundle Size
+# 3. Set up environment variables
+cp .env.example .env
+# Add your Google Maps API key to .env
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# 4. Start the development server
+npm start
+```
 
-### Making a Progressive Web App
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🔑 Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Create a `.env` file in the project root:
 
-### Deployment
+```
+REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+> The app works without an API key — the map panel shows a styled placeholder with clickable turf pins instead.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔐 Authentication
+
+Auth state is managed via React Context. Two user roles are supported:
+
+| Role | Access |
+|---|---|
+| **Player** | Search and explore turfs |
+| **Owner** | Access to Owner Dashboard (turf listing coming soon) |
+
+**Demo tip:** Use an email containing `"owner"` to log in as an Owner role.
+
+---
+
+## 🗺️ Map Features
+
+- Turf markers shown as **green circles** on the map
+- Active/selected turf marker becomes **larger and darker**
+- Clicking a marker opens an **info window** with turf details
+- **Blue dot** shows your current location (requires location permission)
+- **📍 Recenter button** (bottom right) to jump back to your location
+
+---
+
+## 🛣️ Roadmap
+
+- [ ] Backend API with Node.js + Express
+- [ ] MongoDB database with real turf data
+- [ ] JWT-based authentication
+- [ ] Owner turf listing and management
+- [ ] Booking system for players
+- [ ] Image uploads via Cloudinary
+- [ ] Reviews and ratings
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## 📄 License
+
+[MIT](LICENSE)
+
+---
+
+<p align="center">Made with ❤️ using React + Google Maps</p>
