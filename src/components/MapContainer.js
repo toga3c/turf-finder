@@ -10,7 +10,13 @@ const MAP_OPTIONS = {
   streetViewControl: false,
   fullscreenControl: true,
   styles: [
-    { featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }] },
+  { elementType: "labels", stylers: [{ visibility: "off" }] },
+  { featureType: "poi", stylers: [{ visibility: "off" }] },
+  { featureType: "transit", stylers: [{ visibility: "off" }] },
+  { featureType: "administrative", stylers: [{ visibility: "off" }] },
+  { featureType: "landscape.man_made", stylers: [{ visibility: "off" }] },
+  { featureType: "road", stylers: [{ visibility: "on" }] },
+  { featureType: "water", stylers: [{ visibility: "on" }] },
   ],
 };
 
