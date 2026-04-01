@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import { AuthProvider } from "./context/AuthContext";
 import { BookingProvider } from "./context/BookingContext";
+import { TurfProvider } from "./context/TurfContext";
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -29,33 +30,35 @@ function NotFound() {
 export default function App() {
   return (
     <AuthProvider>
-      <BookingProvider>
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route
-              path="/my-bookings"
-              element={
-                <ProtectedRoute requiredRole="player">
-                  <MyBookings />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/owner"
-              element={
-                <ProtectedRoute requiredRole="owner">
-                  <OwnerDashboard />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </BookingProvider>
+      <TurfProvider>
+        <BookingProvider>
+          <BrowserRouter>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route
+                path="/my-bookings"
+                element={
+                  <ProtectedRoute requiredRole="player">
+                    <MyBookings />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/owner"
+                element={
+                  <ProtectedRoute requiredRole="owner">
+                    <OwnerDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </BookingProvider>
+      </TurfProvider>
     </AuthProvider>
   );
 }

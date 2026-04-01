@@ -10,6 +10,7 @@ const turfs = [
     lat: 22.506045,
     lng: 88.329555,
     available: true,
+    image: "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=400&q=80",
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const turfs = [
     lat: 22.538281,
     lng: 88.392928,
     available: true,
+    image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=400&q=80",
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const turfs = [
     lat: 22.537112,
     lng: 88.348799,
     available: true,
+    image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=400&q=80",
   },
   {
     id: 4,
@@ -46,6 +49,7 @@ const turfs = [
     lat: 22.572860,
     lng: 88.351380,
     available: true,
+    image: "https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=400&q=80",
   },
   {
     id: 5,
@@ -58,6 +62,7 @@ const turfs = [
     lat: 22.594443,
     lng: 88.396535,
     available: true,
+    image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=400&q=80",
   },
   {
     id: 6,
@@ -70,6 +75,7 @@ const turfs = [
     lat: 22.533793,
     lng: 88.398862,
     available: true,
+    image: "https://images.unsplash.com/photo-1624880357913-a8539238245b?w=400&q=80",
   },
   {
     id: 7,
@@ -82,6 +88,7 @@ const turfs = [
     lat: 22.453777,
     lng: 88.395861,
     available: true,
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=80",
   },
   {
     id: 8,
@@ -94,6 +101,7 @@ const turfs = [
     lat: 22.599452,
     lng: 88.423523,
     available: true,
+    image: "https://images.unsplash.com/photo-1551958219-acbc595b3c41?w=400&q=80",
   },
   {
     id: 9,
@@ -106,6 +114,7 @@ const turfs = [
     lat: 22.470256,
     lng: 88.282581,
     available: true,
+    image: "https://images.unsplash.com/photo-1459865264687-595d652de67e?w=400&q=80",
   },
   {
     id: 10,
@@ -118,6 +127,7 @@ const turfs = [
     lat: 22.456455,
     lng: 88.363891,
     available: true,
+    image: "https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=400&q=80",
   },
   {
     id: 11,
@@ -130,6 +140,7 @@ const turfs = [
     lat: 22.518900,
     lng: 88.335600,
     available: true,
+    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=400&q=80",
   },
   {
     id: 12,
@@ -142,6 +153,7 @@ const turfs = [
     lat: 22.436900,
     lng: 88.396500,
     available: true,
+    image: "https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=400&q=80",
   },
   {
     id: 13,
@@ -154,6 +166,7 @@ const turfs = [
     lat: 22.579600,
     lng: 88.399700,
     available: true,
+    image: "https://images.unsplash.com/photo-1562552476-8ac59b2a2e46?w=400&q=80",
   },
   {
     id: 14,
@@ -166,8 +179,8 @@ const turfs = [
     lat: 22.576000,
     lng: 88.431700,
     available: true,
+    image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&q=80",
   },
-
   {
     id: 16,
     name: "Turf Air Plaza 2.0",
@@ -179,6 +192,7 @@ const turfs = [
     lat: 22.57996047861716,
     lng: 88.45976789498647,
     available: true,
+    image: "https://images.unsplash.com/photo-1589487391730-58f20eb2c308?w=400&q=80",
   },
   {
     id: 17,
@@ -191,6 +205,7 @@ const turfs = [
     lat: 22.535300,
     lng: 88.351200,
     available: true,
+    image: "https://images.unsplash.com/photo-1556056504-5c7696c4c28d?w=400&q=80",
   },
   {
     id: 18,
@@ -203,6 +218,7 @@ const turfs = [
     lat: 22.513100,
     lng: 88.390500,
     available: true,
+    image: "https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=400&q=80",
   },
   {
     id: 19,
@@ -215,6 +231,7 @@ const turfs = [
     lat: 22.544800,
     lng: 88.342600,
     available: true,
+    image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&q=80",
   },
   {
     id: 20,
@@ -227,19 +244,21 @@ const turfs = [
     lat: 22.615000,
     lng: 88.410000,
     available: true,
+    image: "https://images.unsplash.com/photo-1552667466-07770ae110d0?w=400&q=80",
   },
   {
-  id: 21,
-  name: "Turf Air Plaza - Rosedale",
-  location: "Rosedale Plaza Mall, Action Area III, Newtown, Kolkata",
-  sports: ["Football", "Cricket"],
-  pricePerHour: 1300,
-  rating: 4.5,
-  reviews: 600,
-  lat: 22.561795210813113, 
-  lng: 88.4904623526583,
-  available: true,
-  }
+    id: 21,
+    name: "Turf Air Plaza - Rosedale",
+    location: "Rosedale Plaza Mall, Action Area III, Newtown, Kolkata",
+    sports: ["Football", "Cricket"],
+    pricePerHour: 1300,
+    rating: 4.5,
+    reviews: 600,
+    lat: 22.561795210813113,
+    lng: 88.4904623526583,
+    available: true,
+    image: "https://images.unsplash.com/photo-1598136490941-30d885318abd?w=400&q=80",
+  },
 ];
 
 export default turfs;

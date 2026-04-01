@@ -3,23 +3,18 @@ import SearchBar from "../components/SearchBar";
 import Sidebar from "../components/Sidebar";
 import TurfList from "../components/TurfList";
 import MapContainer from "../components/MapContainer";
-import { getTurfs } from "../services/turfService";
+import { useTurf } from "../context/TurfContext";
 
 export default function Home() {
-  const [allTurfs, setAllTurfs]             = useState([]);
+  const { turfs: allTurfs } = useTurf();
   const [filteredTurfs, setFilteredTurfs]   = useState([]);
   const [activeTurfId, setActiveTurfId]     = useState(null);
   const [searchQuery, setSearchQuery]       = useState("");
   const [filters, setFilters]               = useState({ sports: [], maxPrice: null, onlyAvailable: false });
-  const [loading, setLoading]               = useState(true);
 
   useEffect(() => {
-    getTurfs().then((data) => {
-      setAllTurfs(data);
-      setFilteredTurfs(data);
-      setLoading(false);
-    });
-  }, []);
+    setFilteredTurfs(allTurfs);
+  }, [allTurfs]);
 
   useEffect(() => {
     let result = allTurfs;
@@ -55,8 +50,6 @@ export default function Home() {
 
   return (
     <div className="flex h-[calc(100vh-64px)] mt-16 overflow-hidden">
-
-      {/* Left Panel */}
       <aside className="w-full md:w-[38%] flex flex-col border-r border-gray-100 bg-white overflow-hidden">
         <div className="p-4 border-b border-gray-100">
           <SearchBar onSearch={setSearchQuery} />
@@ -67,12 +60,10 @@ export default function Home() {
             turfs={filteredTurfs}
             activeTurfId={activeTurfId}
             onTurfClick={(turf) => setActiveTurfId(turf.id === activeTurfId ? null : turf.id)}
-            loading={loading}
+            loading={false}
           />
         </div>
       </aside>
-
-      {/* Right Panel - Map */}
       <main className="hidden md:block flex-1 relative">
         <MapContainer
           turfs={filteredTurfs}
@@ -80,7 +71,6 @@ export default function Home() {
           onMarkerClick={(turf) => setActiveTurfId(turf.id === activeTurfId ? null : turf.id)}
         />
       </main>
-
     </div>
   );
 }

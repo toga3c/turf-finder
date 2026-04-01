@@ -29,6 +29,11 @@ export default function Navbar() {
         <Link to="/" className="hover:text-turf-green transition-colors">
           Explore
         </Link>
+        {user?.role === "player" && (
+          <Link to="/my-bookings" className="hover:text-turf-green transition-colors">
+            My Bookings
+          </Link>
+        )}
         {user?.role === "owner" && (
           <Link to="/owner" className="hover:text-turf-green transition-colors">
             My Dashboard
@@ -59,7 +64,16 @@ export default function Navbar() {
             {/* Divider */}
             <div className="hidden sm:block w-px h-6 bg-gray-200" />
 
-            {/* Owner dashboard shortcut */}
+            {/* Quick links */}
+            {user.role === "player" && (
+              <Link
+                to="/my-bookings"
+                className="hidden sm:flex text-xs font-semibold bg-turf-light text-turf-green
+                           px-3 py-1.5 rounded-lg hover:bg-turf-green hover:text-white transition-colors"
+              >
+                My Bookings
+              </Link>
+            )}
             {user.role === "owner" && (
               <Link
                 to="/owner"
